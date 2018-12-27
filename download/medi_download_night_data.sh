@@ -27,7 +27,7 @@ function download(){
 		mkdir $DEST 
 	fi
 
-	SRC_STRA_LOG="/home/u910019/${TRADE_GROUP}/${DAY_NGT}/backup/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.${COMPRESS}"
+	SRC_STRA_LOG="/home/u910019/medi/${DAY_NGT}/backup/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.${COMPRESS}"
 	SRC_TICK_DATA="/home/u910019/md/download/${DAY_NGT}/backup/${EXT}_md_${DAY_NGT}_`date +%y%m%d`.tar.${COMPRESS}"
 
 	scp  -P ${host_port} "${host_user}@${host_ip}:${SRC_STRA_LOG}" ${DEST}
@@ -42,14 +42,15 @@ host_ip="101.231.3.117"
 host_user="u910019"
 host_port="44163"
 EXT="sh"
-TRADE_GROUP="medi"
 COMPRESS="gz"
 SUFFIX="night"
 DAY_NGT="night"
 download
 ## strategy log
 SRC="${DEST}/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.${COMPRESS}"
-tar -C $DEST -xvzf ${SRC}
+# added by wy 20181218
+openssl des3 -d -k medi -salt -in ${SRC} | tar -C $DEST -xvzf -  
+# tar -C $DEST -xvzf ${SRC}
 rm -r $SRC
 DEST_BJ2="${DEST}/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.bz2"
 tar -cvjf $DEST_BJ2 -C $DEST "./backup"
@@ -68,24 +69,39 @@ host_ip="101.231.3.117"
 host_user="u910019"
 host_port="44153"
 EXT="dce"
-TRADE_GROUP="medi"
 COMPRESS="gz"
 # download data form dce server for medi
 SUFFIX="ngt"
 DAY_NGT="night"
 download
+## strategy log
+SRC="${DEST}/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.${COMPRESS}"
+# added by wy 20181218
+openssl des3 -d -k medi -salt -in ${SRC} | tar -C $DEST -xvzf -  
+# tar -C $DEST -xvzf ${SRC}
+rm -r $SRC
+DEST_BJ2="${DEST}/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.gz"
+tar -cvzf $DEST_BJ2 -C $DEST "./backup"
+rm -r "${DEST}/backup"
 
-# download data form dce server for medi
+# download data form zce server for medi
 host_ip="1.193.38.91"
 host_user="u910019"
 host_port="8012"
 EXT="czce"
-TRADE_GROUP="medi"
 COMPRESS="gz"
 SUFFIX="ngt"
 DAY_NGT="night"
 download
-
+## strategy log
+SRC="${DEST}/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.${COMPRESS}"
+# added by wy 20181218
+openssl des3 -d -k medi -salt -in ${SRC} | tar -C $DEST -xvzf -  
+# tar -C $DEST -xvzf ${SRC}
+rm -r $SRC
+DEST_BJ2="${DEST}/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.gz"
+tar -cvzf $DEST_BJ2 -C $DEST "./backup"
+rm -r "${DEST}/backup"
 
 
 ######################################
