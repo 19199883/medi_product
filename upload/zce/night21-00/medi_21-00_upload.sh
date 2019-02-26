@@ -41,15 +41,15 @@ function enter_cur_dir(){
 
 function upload_files
 {
-	scp -P 8012 ./files/*.csv		  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/tools/
-	scp -P 8012 ./files/*.csv		  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/
-	scp -P 8012 ./files/*.txt		  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/tools/
-	scp -P 8012 ./files/*.txt		  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/
-	scp -P 8012 ./files/packaged/*.so u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/
+	scp -Cp -P 8012 ./files/*.csv		  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/tools/
+	scp -Cp -P 8012 ./files/*.csv		  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/
+	scp -Cp -P 8012 ./files/*.txt		  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/tools/
+	scp -Cp -P 8012 ./files/*.txt		  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/
+	scp -Cp -P 8012 ./files/packaged/*.so u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/
 
 	ssh -p 8012			  			  u910019@1.193.38.91 'rm /home/u910019/medi/night21-00/x-zce/tools/*.log'
 	ssh -p 8012						  u910019@1.193.38.91 '/home/u910019/medi/night21-00/x-zce/tools/configurator.py'
-	scp -P 8012						  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/tools/configurator.log ./
+	scp -Cp -P 8012						  u910019@1.193.38.91:/home/u910019/medi/night21-00/x-zce/tools/configurator.log ./
 	cat ./configurator.log
 }
 enter_cur_dir
