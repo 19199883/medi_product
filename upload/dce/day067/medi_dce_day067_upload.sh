@@ -42,8 +42,8 @@ function enter_cur_dir(){
 
 function upload_files
 {
-	ssh -p 44153						   u910019@101.231.3.117 'rm /home/u910019/medi/day067/x-dce/*.pos'
-	ssh -p 44153						   u910019@101.231.3.117 'cp -a /home/u910019/medi/night067/x-dce/*.pos /home/u910019/medi/day067/x-dce/'
+#ssh -p 44153						   u910019@101.231.3.117 'rm /home/u910019/medi/day067/x-dce/*.pos'
+#ssh -p 44153						   u910019@101.231.3.117 'cp -a /home/u910019/medi/night067/x-dce/*.pos /home/u910019/medi/day067/x-dce/'
 
 	ssh -p 44153						   u910019@101.231.3.117 'rm /home/u910019/medi/day067/x-dce/*day.so'
 	ssh -p 44153						   u910019@101.231.3.117 'rm /home/u910019/medi/day067/x-dce/*.txt'
