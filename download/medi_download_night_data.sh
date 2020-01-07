@@ -108,14 +108,11 @@ rm -r "${DEST}/backup"
 # download shfel level market data
 #
 ####################################
-LEV2MD_DIR="./lev2-md"
-LEV2MD="/home/u910019/market-data/shfe-lev2/night/backup/shfe_lev2_data_${SUFFIX}_`date +%y%m%d`.tar.gz"
-LEV2MD_GZ="shfe_lev2_data_${SUFFIX}_`date +%y%m%d`.tar.gz"
-LEV2MD_BZ2="shfe_lev2_data_${SUFFIX}_`date +%y%m%d`.tar.bz2"
-scp  -P 44163  "u910019@101.231.3.117:${LEV2MD}" ${LEV2MD_DIR}
-cd ./lev2-md
-tar -xvzf $LEV2MD_GZ
-rm $LEV2MD_GZ
-tar -cvjf $LEV2MD_BZ2 ./backup
-rm -r ./backup
-cd ..
+LEV2MD="/home/u910019/market-data/shfe-lev2/night/backup/shfe_lev2_data_night_`date +%y%m%d`.tar.gz"
+LEV2MD_GZ="shfe_lev2_data_night_`date +%y%m%d`.tar.gz"
+LEV2MD_BZ2="shfe_lev2_data_night_`date +%y%m%d`.tar.bz2"
+scp  -P 44163  "u910019@101.231.3.117:${LEV2MD}" ${DEST}
+
+
+# tar all data
+tar  --remove-files -cvjf "data_`date +%y%m%d_night`.tar.bz2" ./data	
