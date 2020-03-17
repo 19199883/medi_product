@@ -118,5 +118,6 @@ echo "LEV2MD_BZ2:${LEV2MD_BZ2}"
 scp  -P 44163  "u910019@101.231.3.117:${LEV2MD}" ${DEST}
 
 # tar all data
+cp -a ./contracts.csv ./data
 tar  --remove-files -cvjf "data_`date +%y%m%d_day`.tar.bz2" ./data	
 
