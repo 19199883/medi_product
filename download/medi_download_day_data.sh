@@ -53,16 +53,16 @@ SRC="${DEST}/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.${COMPRESS}"
 openssl des3 -d -k medi -salt -in ${SRC} | tar -C ${DEST} -xvzf -
 # tar -C ${DEST} -xvzf ${SRC}
 rm -r ${SRC}
-DEST_BJ2="${DEST}/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.bz2"
-tar -cvjf $DEST_BJ2 -C $DEST "./backup"
+DEST_GZ="${DEST}/${EXT}_stra_${SUFFIX}_`date +%y%m%d`.tar.gz"
+tar -cvzf $DEST_GZ -C $DEST "./backup"
 rm -r "${DEST}/backup"
 
 ## market data
 SRC="${DEST}/${EXT}_md_${SUFFIX}_`date +%y%m%d`.tar.${COMPRESS}"
 tar -C ${DEST} -xvzf ${SRC}
 rm -r ${SRC}
-DEST_BJ2="${DEST}/${EXT}_md_${SUFFIX}_`date +%y%m%d`.tar.bz2"
-tar -cvjf $DEST_BJ2 -C $DEST "./backup"
+DEST_GZ="${DEST}/${EXT}_md_${SUFFIX}_`date +%y%m%d`.tar.gz"
+tar -cvzf $DEST_GZ -C $DEST "./backup"
 rm -r "${DEST}/backup"
 
 # download data form dce server for medi
@@ -111,7 +111,7 @@ rm -r "${DEST}/backup"
 ####################################
 LEV2MD="/home/u910019/market-data/shfe-lev2/day/backup/shfe_lev2_data_day_`date +%y%m%d`.tar.gz"
 LEV2MD_GZ="shfe_lev2_data_day_`date +%y%m%d`.tar.gz"
-LEV2MD_BZ2="shfe_lev2_data_day_`date +%y%m%d`.tar.bz2"
+#LEV2MD_BZ2="shfe_lev2_data_day_`date +%y%m%d`.tar.bz2"
 echo "LEV2MD:${LEV2MD}:
 echo "LEV2MD_GZ"${LEV2MD_GZ}"
 echo "LEV2MD_BZ2:${LEV2MD_BZ2}"
