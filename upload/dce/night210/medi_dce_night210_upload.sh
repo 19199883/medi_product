@@ -45,15 +45,15 @@ function upload_files
 	ssh -p	   44153					   u910019@101.231.3.117 'rm /home/u910019/medi/night210/x-dce/*night.so'
 	ssh -p	   44153					   u910019@101.231.3.117 'rm /home/u910019/medi/night210/x-dce/*.txt'
 	ssh -p	   44153					   u910019@101.231.3.117 'rm /home/u910019/medi/night210/x-dce/tools/*.txt'
-	scp -Cp -P 44153			 ./files/*.csv u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/tools/
-	scp -Cp -P 44153			 ./files/*.csv u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/
-	scp -Cp -P 44153			 ./files/*.txt u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/tools/
-	scp -Cp -P 44153			 ./files/*.txt u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/
-	scp -Cp -P 44153 ./files/packaged/*.so     u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/
+	scp -qCp -P 44153			 ./files/*.csv u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/tools/
+	scp -qCp -P 44153			 ./files/*.csv u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/
+	scp -qCp -P 44153			 ./files/*.txt u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/tools/
+	scp -qCp -P 44153			 ./files/*.txt u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/
+	scp -qCp -P 44153 ./files/packaged/*.so     u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/
 
 	ssh -p 44153						   u910019@101.231.3.117 'rm /home/u910019/medi/night210/x-dce/tools/*.log'
 	ssh -p 44153							  u910019@101.231.3.117 '/home/u910019/medi/night210/x-dce/tools/configurator.py'
-	scp -Cp -P 44153						   u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/tools/configurator.log ./
+	scp -qCp -P 44153						   u910019@101.231.3.117:/home/u910019/medi/night210/x-dce/tools/configurator.log ./
 	cat ./configurator.log
 	ssh -p 44153						   u910019@101.231.3.117 'sh /home/u910019/medi/night210/x-dce/pos_calc.sh'
 	ssh -p 44153						   u910019@101.231.3.117 'sh /home/u910019/medi/night210/x-dce/pos_redis.sh'

@@ -44,15 +44,15 @@ function upload_files
 	ssh -p 8012							  u910019@1.193.38.91 'rm /home/u910019/medi/day223/x-zce/*day.so'
 	ssh -p 8012							  u910019@1.193.38.91 'rm /home/u910019/medi/day223/x-zce/*.txt'
 	ssh -p 8012							  u910019@1.193.38.91 'rm /home/u910019/medi/day223/x-zce/tools/*.txt'
-	scp -Cp -P 8012 ./files/*.csv			 u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/tools/
-	scp -Cp -P 8012 ./files/*.csv			 u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/
-	scp -Cp -P 8012 ./files/*.txt			 u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/tools/
-	scp -Cp -P 8012 ./files/*.txt		     u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/
-	scp -Cp -P 8012 ./files/packaged/*.so    u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/
+	scp -qCp -P 8012 ./files/*.csv			 u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/tools/
+	scp -qCp -P 8012 ./files/*.csv			 u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/
+	scp -qCp -P 8012 ./files/*.txt			 u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/tools/
+	scp -qCp -P 8012 ./files/*.txt		     u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/
+	scp -qCp -P 8012 ./files/packaged/*.so    u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/
 
 	ssh -p 8012						  u910019@1.193.38.91 'rm /home/u910019/medi/day223/x-zce/tools/*.log'
 	ssh -p 8012						  u910019@1.193.38.91 '/home/u910019/medi/day223/x-zce/tools/configurator.py'
-	scp -Cp -P 8012						  u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/tools/configurator.log ./
+	scp -qCp -P 8012						  u910019@1.193.38.91:/home/u910019/medi/day223/x-zce/tools/configurator.log ./
 	cat ./configurator.log
 	ssh -p 8012						  u910019@1.193.38.91 'sh /home/u910019/medi/day223/x-zce/pos_calc.sh'
 	ssh -p 8012						  u910019@1.193.38.91 'sh /home/u910019/medi/day223/x-zce/pos_redis.sh'

@@ -23,9 +23,9 @@ function enter_cur_dir(){
 
 function upload_files
 {
-	rm -r upload_so
-	unzip upload.zip
-	cp -a upload_so/* ./upload/
+	rm -r /home/medi/upload_so
+	unzip -q /home/medi/upload_so.zip
+	cp -a /home/medi/upload_so/* /home/medi/upload/
 	
 	######### dce #########
 	sh	/home/medi/upload/dce/day067/startup.sh

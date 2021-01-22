@@ -42,15 +42,15 @@ function enter_cur_dir(){
 
 function upload_files
 {
-	scp -Cp -P 44163 ./files/*.csv u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/tools/
-	scp -Cp -P 44163 ./files/*.csv u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/
-	scp -Cp -P 44163 ./files/*.txt u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/tools/
-	scp -Cp -P 44163 ./files/*.txt u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/
-	scp -Cp -P 44163 ./files/packaged/*.so 	  u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/
+	scp -qCp -P 44163 ./files/*.csv u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/tools/
+	scp -qCp -P 44163 ./files/*.csv u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/
+	scp -qCp -P 44163 ./files/*.txt u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/tools/
+	scp -qCp -P 44163 ./files/*.txt u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/
+	scp -qCp -P 44163 ./files/packaged/*.so 	  u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/
 
 	ssh -p 44163  u910019@101.231.3.117 'rm /home/u910019/medi/night96/x-shfe/tools/*.log'
 	ssh -p 44163  u910019@101.231.3.117 '/home/u910019/medi/night96/x-shfe/tools/configurator.py'
-	scp -Cp -P 44163  u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/tools/configurator.log ./
+	scp -qCp -P 44163  u910019@101.231.3.117:/home/u910019/medi/night96/x-shfe/tools/configurator.log ./
 	cat ./configurator.log
 }
 
