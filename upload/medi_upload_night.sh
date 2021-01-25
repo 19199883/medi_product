@@ -47,7 +47,7 @@ function upload_files
 	cat "upload.log" | grep "WARNING" | mail -s "WARINGING for uploading so files." 2684027160@qq.com
 	cat "upload.log" | grep "WARNING" | mail -s "WARINGING for uploading so files." 17199883@qq.com
 	echo "################ 请检查如下警告#####################################"
-	cat "upload.log" | grep "WARNING"`  
+	cat "upload.log" | grep "WARNING"  
 	echo "uploaded"
 }
 
