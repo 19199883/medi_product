@@ -1,0 +1,5 @@
+盘中如何重启交易程序，以210账号日盘为例，执行如下步骤：
+1. 进入云服务器day210日盘目录：/home/medi/upload/dce/day210
+2. 执行：./terminate-trader.sh
+3. 使用快期平仓
+4. 执行：./start-trader.sh，然后使用ctrl+c退出。
