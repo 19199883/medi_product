@@ -50,5 +50,5 @@ done
 echo "wake up"
 
 rm *.pos
-rm ../../night169/x-dce/*.pos
+rm ../../night169/x-shfe/*.pos
 
