@@ -30,8 +30,8 @@ function enter_cur_dir()
 
 enter_cur_dir
 
-echo "------------day210 is terminating--------"
+echo "------------day067 is terminating--------"
 remoteip="-p 44153 u910019@101.231.3.117"
-ssh $remoteip "sh /home/u910019/medi/day210/x-dce/terminate-hzp.sh"
-echo "------------day210 terminated--------"
+ssh $remoteip "sh /home/u910019/medi/day067/x-dce/terminate-hzp.sh"
+echo "------------day067 terminated--------"
 

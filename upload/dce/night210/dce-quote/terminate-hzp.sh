@@ -30,8 +30,6 @@ function enter_cur_dir()
 
 enter_cur_dir
 
-rm *.pos
-rm ../../day210/x-dce/*.pos
 
 #kill process and exit
 pkill --signal SIGUSR1  $program_name 
@@ -51,3 +49,5 @@ done
 
 echo "wake up"
 
+rm *.pos
+rm ../../day210/x-dce/*.pos

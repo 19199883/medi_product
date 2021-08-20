@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##################
-# 该脚本放在dce-trade1服务器上，用来停止dce-quote 服务器上的day115.。
+# 该脚本放在dce-trade1服务器上，用来启动day067。
 # 由hzp操作.
 # 
 #
@@ -30,11 +30,7 @@ function enter_cur_dir()
 
 enter_cur_dir
 
+echo "------------day067 is starting--------"
+sh start.sh
+echo "------------day067 hase started--------"
 
-echo "------------day115 is terminating--------"
-remoteip="u910028@172.18.113.133"
-ssh $remoteip "sh /home/u910028/medi/day115/x-dce/terminate-hzp.sh"
-echo "------------day115 terminated--------"
-
-rm *.pos
-rm ../../night115/x-dce/*.pos

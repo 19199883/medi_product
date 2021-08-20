@@ -30,9 +30,6 @@ function enter_cur_dir()
 
 enter_cur_dir
 
-rm *.pos
-rm ../../night210/x-dce/*.pos
-
 echo "------------day210 is starting--------"
 remoteip="u910028@172.18.113.133"
 ssh $remoteip "sh /home/u910028/medi/day210/x-dce/start.sh"

@@ -1,12 +1,12 @@
 #!/bin/bash
 
 ##################
-# 该脚本放在dce-trade1服务器上，用来停止dce-quote 服务器上的day115.。
-# 由hzp操作.
+# 该脚本放在dce-trader1服务器上，用来盘中停止day067，并清除仓位。
 # 
 #
 #######################################
 
+program_name="x-day067"
 
 # the directory where this script file is.
 function enter_cur_dir()
@@ -31,10 +31,24 @@ function enter_cur_dir()
 enter_cur_dir
 
 
-echo "------------day115 is terminating--------"
-remoteip="u910028@172.18.113.133"
-ssh $remoteip "sh /home/u910028/medi/day115/x-dce/terminate-hzp.sh"
-echo "------------day115 terminated--------"
+#kill process and exit
+pkill --signal SIGUSR1  $program_name 
+
+echo "after kill"
+pid=$(ps -e  |grep $program_name | awk '{print $1}')
+len=${#pid}
+echo "len:${len}"
+while [ $len -gt 0  ]
+do
+	pid=$(ps -e  |grep $program_name | awk '{print $1}')
+	len=${#pid}
+	echo "len:${len}"
+	echo "pid:${pid}"
+	sleep 1
+done
+
+echo "wake up"
 
 rm *.pos
-rm ../../night115/x-dce/*.pos
+rm ../../night067/x-dce/*.pos
+

@@ -30,11 +30,11 @@ function enter_cur_dir()
 
 enter_cur_dir
 
-rm *.pos
-rm ../../day115/x-dce/*.pos
 
 echo "------------night115 is terminating--------"
 remoteip="u910028@172.18.113.133"
 ssh $remoteip "sh /home/u910028/medi/night115/x-dce/terminate-hzp.sh"
 echo "------------night115 terminated--------"
 
+rm *.pos
+rm ../../day115/x-dce/*.pos
