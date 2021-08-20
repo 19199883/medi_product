@@ -58,8 +58,9 @@ function upload_files
 	ssh -p 44153							  u910019@101.231.3.117 '/home/u910019/medi/night067/x-dce/tools/configurator.py'
 	scp -qCp -P 44153						   u910019@101.231.3.117:/home/u910019/medi/night067/x-dce/tools/configurator.log ./
 	cat ./configurator.log
-	ssh -p 44153						   u910019@101.231.3.117 'sh /home/u910019/medi/night067/x-dce/pos_calc.sh'
-	ssh -p 44153						   u910019@101.231.3.117 'sh /home/u910019/medi/night067/x-dce/pos_redis.sh'
+
+#	ssh -p 44153						   u910019@101.231.3.117 'sh /home/u910019/medi/night067/x-dce/pos_calc.sh'
+#	ssh -p 44153						   u910019@101.231.3.117 'sh /home/u910019/medi/night067/x-dce/pos_redis.sh'
 }
  
 enter_cur_dir
