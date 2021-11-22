@@ -34,14 +34,14 @@ function upload_files
 	sh	/home/medi/upload/dce/night210/startup.sh		>> upload.log
 
 	######### zce #########
-	sh	/home/medi/upload/zce/night21-00/startup.sh		>> upload.log	
-	sh	/home/medi/upload/zce/night211/startup.sh		>> upload.log	
-	sh	/home/medi/upload/zce/night225/startup.sh		>> upload.log	
+	sh	/home/medi/upload/zce/night169/startup.sh		>> upload.log	
+	sh	/home/medi/upload/zce/night110/startup.sh		>> upload.log	
+	sh	/home/medi/upload/zce/night96/startup.sh		>> upload.log	
 
 	######### shfe #########
-	sh	/home/medi/upload/shfe/night110/startup.sh		>> upload.log	
-	sh	/home/medi/upload/shfe/night169/startup.sh		>> upload.log	
-	sh	/home/medi/upload/shfe/night96/startup.sh		>> upload.log	
+	sh	/home/medi/upload/shfe/night21-00/startup.sh		>> upload.log	
+	sh	/home/medi/upload/shfe/night211/startup.sh		>> upload.log	
+	sh	/home/medi/upload/shfe/night225/startup.sh		>> upload.log	
 
 
 	cat "upload.log" | grep "WARNING" | mail -s "WARINGING for uploading so files." 2684027160@qq.com

@@ -35,14 +35,14 @@ function upload_files
 	sh	/home/medi/upload/dce/day210/startup.sh		>> upload.log	
 
 	######### zce #########
-	sh	/home/medi/upload/zce/day21-00/startup.sh	>> upload.log	
-	sh	/home/medi/upload/zce/day211/startup.sh		>> upload.log	
-	sh	/home/medi/upload/zce/day225/startup.sh		>> upload.log	
+	sh	/home/medi/upload/zce/day169/startup.sh	>> upload.log	
+	sh	/home/medi/upload/zce/day110/startup.sh		>> upload.log	
+	sh	/home/medi/upload/zce/day96/startup.sh		>> upload.log	
 
 	######### shfe #########
-	sh	/home/medi/upload/shfe/day110/startup.sh	>> upload.log		
-	sh	/home/medi/upload/shfe/day169/startup.sh	>> upload.log	
-	sh	/home/medi/upload/shfe/day96/startup.sh		>> upload.log
+	sh	/home/medi/upload/shfe/day21-00/startup.sh	>> upload.log		
+	sh	/home/medi/upload/shfe/day211/startup.sh	>> upload.log	
+	sh	/home/medi/upload/shfe/day225/startup.sh		>> upload.log
 
 	cat "upload.log" | grep "WARNING" | mail -s "WARINGING for uploading so files." 2684027160@qq.com
 	cat "upload.log" | grep "WARNING" | mail -s "WARINGING for uploading so files." 17199883@qq.com
